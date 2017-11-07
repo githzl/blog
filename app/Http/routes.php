@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+/*
+|--------------------------------------------------------------------------
+| Index Routes (www.totmp.com)
+|--------------------------------------------------------------------------
+|
+| This is front end Route and This site is blog web site.
+| My name is Hezhongli,from Beijing China.I'm a programmer Personnel
+| Exchange of learning and Opinion feedback contact
+| mail:newhzl@163.com or
+| git:https://github.com/githzl
+|
+*/
+
+Route::any('/','blog\IndexController@index'); // 主页
