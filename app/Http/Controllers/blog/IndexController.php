@@ -16,7 +16,7 @@ class IndexController extends Controller
      */
     public function index(Request $request)
     {
-        dd(123);
+        dd('Welcome to Laravel 5.1');
     }
 
     /**
