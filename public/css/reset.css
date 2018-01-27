@@ -1,0 +1,262 @@
+body,h1,h2,h3,h4,h5,h6{
+    padding: 0;
+    margin: 0;
+    font-family:'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+    font-weight:normal;
+    background:#ebebeb;
+}
+::selection{
+    background-color:#4a98d6;
+    color:#fff;
+}
+.head{
+    width: 100%;
+    height: 260px;
+    background-color: #4a98d6;
+    text-align: center;
+}
+.headimg{
+    margin-top: 10px;
+    border-radius:50%;
+    border:3px #fff solid;
+    width: 85px;
+    height: 85px;
+}
+.headimg:hover{
+    border:3px #fff solid;
+    cursor:pointer; /* 鼠标放上去变小手*/
+}
+.head-title{
+    font-size: 36px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    color:#fff;
+    background:#4a98d6;
+}
+.tagbtn{
+    text-decoration:none;
+    color:#ccc;
+    border:1px #ccc solid;
+    background-color:#0000002e;
+    padding: 7px 14px;
+    border-radius: 2px;
+    line-height:1.42857143;
+    font-size: 14px;
+    margin-left: 3px;
+}
+.tagbtn:hover{
+    background-color:#0000001e;
+    border:1px #fff solid;
+    color:#fff;
+    text-decoration:none;
+}
+.alimamaicon{
+    display: inline-block;
+    text-decoration:none;
+    padding: 5px 10px;
+    line-height:1.42857143;
+    margin-top:20px;
+    color: #ccc;
+}
+.alimamaicon:hover{
+    /*text-decoration:none;*/
+    color:#43853d;
+}
+.center{
+    background: #ebebeb;
+    width: 100%;
+    height: 100%;
+}
+.split{
+    width: 100%;
+    height: 50px;
+    border-top: 2px solid #e1e1e1
+}
+.articlebox{
+    width:60%;
+    background-color: #fff;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-right: auto;
+    /*margin-left: auto;*/
+    margin-left: 80px;
+    margin-bottom: 30px;
+    display: inline-block;
+
+}
+.footer{
+    background: #505050;
+    height:40px;
+    text-align: center;
+    padding-top: 10px;
+    color:#ccc;
+    font-size: 13px;
+    /*font-weight: 100;	*/
+}
+.articleone{
+    margin-bottom: 50px;
+    margin-top: 20px;
+    width: 100%;
+    border-bottom: 1px #ccc solid;
+    background-color: #fff;
+}
+.articletitle{
+    font-size: 30px;
+    font-weight: 150;
+    color: black;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: auto;
+    display: block;
+    text-decoration:none;
+
+}
+.articletitle:hover{
+    cursor:pointer; /* 鼠标放上去变小手*/
+    text-decoration:none;
+    color: black;
+}
+.auther{
+    text-align: center;
+    line-height: auto;
+    display: inline;
+    padding: 2px 1px;
+    color:#43853d;
+}
+.auther:hover{
+    color:#43853d;
+}
+.articledate{
+    background-color: #fff;
+    text-align: center;
+    line-height: auto;
+    display: block;
+    color: #999;
+    font-size: 13px;
+    margin-bottom: 15px;
+    font-weight: 410;
+}
+.articleimg{
+    width: 100%;
+    margin-bottom: 15px;
+}
+.articleprefix{
+    font-size: 15px;
+    font-weight: 250px;
+    color: black;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: auto;
+    text-decoration:none;
+    font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+.articleprefix:hover{
+    color: black;
+    text-align: center;
+    line-height: auto;
+    text-decoration:none;
+    font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+.articlekeyword{
+    color:#999999;
+    font-weight: 100;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+.ihover{
+    /*color:#43853d;*/
+    font-size: 12.5px;
+    font-weight: 10px;
+}
+.ihover:hover{
+    color:#43853d;
+    text-decoration:underline;
+    cursor:pointer; /* 鼠标放上去变小手*/
+}
+.lookarticle{
+    width:95px;
+    background-color:#008E59;
+    border-radius: 2px;
+    color: #fff;
+    text-align: center;
+    line-height: auto;
+    padding-top:8px;
+    padding-bottom:8px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+.lookarticle:hover{
+    cursor:pointer; /* 鼠标放上去变小手*/
+    background-color:#505050;
+}
+.articlefooter{
+    margin-left: -30px;
+    margin-right: -30px;
+    background-color: #ebebeb;
+    height: 35px;
+    text-align: center;
+    line-height: auto;
+}
+.articletag{
+    display: inline-block;
+    float: right;
+    margin-right: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    background-color: #fff;
+    width: 28%;
+    font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+.info{
+    font-size: 20px;
+    font-weight: 600px;
+    color:#f4645f;
+}
+.articletaglist{
+    /*background-color:#ccccc3;*/
+    color:#43853d;
+    text-align: center;
+    line-height: auto;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.articletaglist:hover{
+    color:#43853d;
+    font-weight: 50;
+
+    text-decoration:underline;
+
+    /*background-color:#008E59;*/
+    /*box-shadow: 1px 1px 1px 1px #ccc;*/
+
+    cursor:pointer; /* 鼠标放上去变小手*/
+}
+.packbtn{
+    text-align: center;
+    line-height: auto;
+    display: inline-block;
+    padding-right: 14px;
+    padding-left: 14px;
+    border-radius: 3px;
+
+
+}
+.leftpack,.packcontent,.rightpack{
+    text-align: center;
+    line-height: auto;
+    background-color:#777;
+    height: 36px;
+    margin-left: 2px;
+    margin-right: 2px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    color: #fff;
+}
+.leftpack,.rightpack{
+    cursor:pointer; /* 鼠标放上去变小手*/
+}

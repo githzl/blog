@@ -16,7 +16,7 @@ class IndexController extends Controller
      */
     public function index(Request $request)
     {
-        dd('Welcome to Laravel 5.1');
+        return view('blog.index');
     }
 
     /**
