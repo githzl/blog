@@ -24,4 +24,6 @@
 |
 */
 
-Route::any('/','blog\IndexController@index'); // 主页
+Route::group(['domain' => '{domain}.totmp.com','namespace' => 'blog'],function(){
+    Route::any('/','IndexController@index');
+});

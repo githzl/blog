@@ -1,0 +1,24 @@
+@media screen and (max-width: 1200px) {
+    .articletag {
+        display: none;
+    }
+    .head{
+        width: 100%;
+        height: 260px;
+        background-color: #4a98d6;
+        text-align: center;
+    }
+    .articlebox{
+        width: 80%;
+        margin-left: 10%;
+        margin-right:10%;
+    }
+}
+@media screen and (max-width: 680px) {
+    .tagbtn{
+        display: none;
+    }
+    .footer{
+        height: 50px;
+    }
+}
