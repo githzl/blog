@@ -4,14 +4,14 @@
     <title>1</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel=stylesheet href='common/bootstrap/bootstrap.min.css'>
-    <link rel=stylesheet href='css/iconfont.css'>
-    <link rel=stylesheet href='css/reset.css'>
-    <link rel=stylesheet href='css/response.css'>
+    <link rel=stylesheet href='blog/common/bootstrap/bootstrap.min.css'>
+    <link rel=stylesheet href='blog/css/iconfont.css'>
+    <link rel=stylesheet href='blog/css/reset.css'>
+    <link rel=stylesheet href='blog/css/response.css'>
 </head>
 <body>
 <div class="head">
-    <img class='headimg' src="image/favicon.png">
+    <img class='headimg' src="blog/image/favicon.png">
     <h1 class='head-title'>简洁 优雅 具有艺术气息。</h1>
     <div>
         <a class='tagbtn' href="">PHP</a>
