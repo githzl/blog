@@ -46,7 +46,7 @@ class AdminController extends Controller
         if(!$data){
             return back();
         }else{
-            Cookie::queue('is_admin',$email, $remember * 1800);
+            Cookie::queue('is_admin',$email, $remember * 1440);
             return redirect($request->getBaseUrl());
         }
     }
