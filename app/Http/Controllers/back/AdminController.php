@@ -16,8 +16,13 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $email = $request->cookie('is_admin');
+        $data = Admin::where('email',$email)->first();
+        if($data){
+            return redirect($request->getBaseUrl());
+        }
         return view('back.login');
     }
 
