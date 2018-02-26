@@ -9,16 +9,16 @@ use App\Http\Controllers\Controller;
 use App\Model\Admin;
 use Cookie;
 
-class IndexController extends Controller
+class AdminController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        echo 'this is index pack';
+        return view('back.login');
     }
 
     /**
@@ -57,9 +57,9 @@ class IndexController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
-        echo 1;die;
+        //
     }
 
     /**

@@ -30,6 +30,9 @@ Route::group(['domain' => 'blog.totmp.com','namespace' => 'blog'],function(){
 
 Route::group(['domain' => 'back.totmp.com','namespace' => 'back'],function(){
     Route::any('/','IndexController@index');
+    Route::get('/login','AdminController@index');
+    Route::post('/loginaction','AdminController@store');
+
 });
 
 
