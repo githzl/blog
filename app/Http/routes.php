@@ -25,14 +25,18 @@
 */
 
 Route::group(['domain' => 'blog.totmp.com','namespace' => 'blog'],function(){
+
     Route::any('/','IndexController@index');
+
 });
 
 Route::group(['domain' => 'back.totmp.com','namespace' => 'back'],function(){
-    Route::any('/','IndexController@index');
+
     Route::get('/login','AdminController@index');
     Route::post('/loginaction','AdminController@store');
+    // 使用isAdmin中间件控制后台权限验证
+    Route::group(['middleware' => 'isAdmin'],function(){
+        Route::any('/','IndexController@index');
+    });
 
 });
-
-
