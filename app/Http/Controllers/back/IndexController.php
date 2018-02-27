@@ -18,7 +18,7 @@ class IndexController extends Controller
      */
     public function index(Request $request)
     {
-        echo 'this is index pack';
+        return view('back.index');
     }
 
     /**
