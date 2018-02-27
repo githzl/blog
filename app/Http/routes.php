@@ -28,6 +28,8 @@ Route::group(['domain' => 'blog.totmp.com','namespace' => 'blog'],function(){
 
     Route::any('/','IndexController@index');
 
+    Route::any('/article/{id}','IndexController@show');
+
 });
 
 Route::group(['domain' => 'back.totmp.com','namespace' => 'back'],function(){
@@ -44,8 +46,9 @@ Route::group(['domain' => 'back.totmp.com','namespace' => 'back'],function(){
 });
 
 // 本地测试环境路由，线上请注释。
-//Route::any('/','back\IndexController@index');
-//Route::resource('article','back\ArticleController');
+//Route::any('/','blog\IndexController@index');
+//Route::any('/article/{id}','blog\IndexController@show');
+//Route::resource('/article','back\ArticleController');
 //Route::get('/login','back\AdminController@index');
 //Route::post('/loginaction','back\AdminController@store');
 

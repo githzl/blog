@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Model\Article;
 
 class IndexController extends Controller
 {
@@ -48,7 +49,8 @@ class IndexController extends Controller
      */
     public function show($id)
     {
-        //
+        $data = Article::where('article_id',12)->first();
+        return view('blog.article',compact('data',$data));
     }
 
     /**

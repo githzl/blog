@@ -9,6 +9,7 @@
     <link href="/back/css/datepicker3.css" rel="stylesheet">
     <link href="/back/css/bootstrap-table.css" rel="stylesheet">
     <link href="/back/css/styles.css" rel="stylesheet">
+
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Model\Article;
 
 class ArticleController extends Controller
 {
@@ -37,7 +38,16 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $dataModel = new Article;
+        $dataModel->article_title = $request->input('article_title','');
+        $dataModel->article_type = $request->input('article_type','');
+        $dataModel->article_cover = $request->input('article_cover','');
+        $dataModel->article_keyword = $request->input('article_keyword','');
+        $dataModel->article_introduce = $request->input('article_introduce','');
+        $dataModel->article_content = $request->input('article_content','');
+        if($dataModel->save()){
+            return redirect('/article');
+        }
     }
 
     /**
