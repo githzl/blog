@@ -37,13 +37,15 @@ Route::group(['domain' => 'back.totmp.com','namespace' => 'back'],function(){
     // 使用isAdmin中间件控制后台权限验证
     Route::group(['middleware' => 'isAdmin'],function(){
         Route::any('/','IndexController@index');
+        Route::resource('article','ArticleController');
+
     });
 
 });
 
 // 本地测试环境路由，线上请注释。
-Route::any('/','back\IndexController@index');
-Route::resource('article','back\ArticleController');
+//Route::any('/','back\IndexController@index');
+//Route::resource('article','back\ArticleController');
 //Route::get('/login','back\AdminController@index');
 //Route::post('/loginaction','back\AdminController@store');
 
