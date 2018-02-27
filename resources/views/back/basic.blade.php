@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>博客管理系统</title>
 
-    <link href="back/css/bootstrap.min.css" rel="stylesheet">
-    <link href="back/css/datepicker3.css" rel="stylesheet">
-    <link href="back/css/styles.css" rel="stylesheet">
+    <link href="/back/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/back/css/datepicker3.css" rel="stylesheet">
+    <link href="/back/css/bootstrap-table.css" rel="stylesheet">
+    <link href="/back/css/styles.css" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -45,7 +46,7 @@
         <li><a href="#"><span class="glyphicon glyphicon-th"></span> Widgets</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-stats"></span> Charts</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-list-alt"></span> Tables</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> 写文章</a></li>
+        <li><a href="/article"><span class="glyphicon glyphicon-pencil"></span> 文章管理</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-info-sign"></span> Alerts &amp; Panels</a></li>
         <li class="parent ">
             <a href="#">
@@ -79,13 +80,15 @@
     @yield('content')
 </div>	<!--/.main-->
 
-<script src="back/js/jquery-1.11.1.min.js"></script>
-<script src="back/js/bootstrap.min.js"></script>
-<script src="back/js/chart.min.js"></script>
-<script src="back/js/chart-data.js"></script>
-<script src="back/js/easypiechart.js"></script>
-<script src="back/js/easypiechart-data.js"></script>
-<script src="back/js/bootstrap-datepicker.js"></script>
+<script src="/back/js/jquery-1.11.1.min.js"></script>
+<script src="/back/js/bootstrap.min.js"></script>
+<script src="/back/js/chart.min.js"></script>
+<script src="/back/js/chart-data.js"></script>
+<script src="/back/js/easypiechart.js"></script>
+<script src="/back/js/easypiechart-data.js"></script>
+<script src="/back/js/bootstrap-datepicker.js"></script>
+<script src="/back/js/bootstrap-table.js"></script>
+
 <script>
     $('#calendar').datepicker({
     });
