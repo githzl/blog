@@ -17,7 +17,8 @@ class IndexController extends Controller
      */
     public function index(Request $request)
     {
-        return view('blog.index');
+        $data = Article::where('article_isshow',1)->orderBy('created_at', 'desc')->paginate(3);
+        return view('blog.index',compact('data',$data));
     }
 
     /**
@@ -49,7 +50,7 @@ class IndexController extends Controller
      */
     public function show($id)
     {
-        $data = Article::where('article_id',12)->first();
+        $data = Article::where('article_id',$id)->first();
         return view('blog.article',compact('data',$data));
     }
 

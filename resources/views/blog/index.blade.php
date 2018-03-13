@@ -36,24 +36,27 @@
     <div class="split"></div>
     <!-- 中心-->
     <div class='articlebox'>
+        @foreach($data as $article)
+<!--        {{ $article->article_id }}-->
 
         <!-- 1篇文章 -->
         <div class='articleone'>
-            <a href='/article/12' class="articletitle">使用Swoole编写简单的Websocket服务器</a>
-            <small class="articledate">作者:  <a class='auther' href="">何忠利</a> • 发表于 2017-04-12 </small>
-             <img class='articleimg' src="/ueditor/upload/20170412/1519741907995601.jpg">
+            <a href='/article/{{ $article->article_id }}' class="articletitle">{{ $article->article_title }}</a>
+            <small class="articledate">作者:  <a class='auther' href="">何忠利</a> • 发表于 {{ date('Y-m-d',strtotime($article->created_at)) }} </small>
+            <img class='articleimg' src="{{ $article->article_cover or '' }}">
             <span class="articleprefix">
-			我们在开发过程中可能会遇见应用中对数据实时性较高或客户端与服务端双向通信，HTTP协议就显得力不从心了，这时WebSocket协议就蹦出来了（允许服务器主动发送信息给客户端）。PHP的高性能扩展Swoole提供了......
+			{{ $article->article_introduce }}
 			</span>
             <div class="articlekeyword">文章关键词：
-                <diy class="ihover">#即时通讯 </diy>
-                <diy class="ihover">#Websocket协议 </diy>
-                <diy class="ihover">#PHP扩展Swoole</diy>
+                @foreach(explode(',',$article->article_keyword) as $key)
+                    <diy class="ihover"># {{ $key }}</diy>
+                @endforeach
             </div>
-            <a href="/article/12"><div class="lookarticle">点击查看</div></a>
+            <div class="lookarticle"><a id="seebook" href="/article/{{ $article->article_id }}">点击查看</a></div>
 
         </div>
         <div class='articlefooter'></div>
+        @endforeach
         <!-- 一篇文章结束-->
         <!-- 1篇文章 -->
 <!--        <div class='articleone'>-->

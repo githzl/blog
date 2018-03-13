@@ -40,41 +40,21 @@
         <!-- 1篇文章 -->
         <div class='articleone'>
             <a href='' class="articletitle">{{$data->article_title}}</a>
-            <small class="articledate">作者:  <a class='auther' href="">何忠利</a> • 发表于 2017-04-12 </small>
-            <img class='articleimg' src="{{$data->article_cover}}">
+            <small class="articledate">作者:  <a class='auther' href="">何忠利</a> • 发表于 {{ date('Y-m-d',strtotime($data->created_at)) }} </small>
+            <img class='articleimg' src="{{$data->article_cover or ''}}">
             <span class="">
 			{!!$data->article_content!!}
 			</span>
             <div class="articlekeyword">文章关键词：
-                <diy class="ihover">#即时通讯 </diy>
-                <diy class="ihover">#Websocket协议 </diy>
-                <diy class="ihover">#PHP扩展Swoole</diy>
+                @foreach(explode(',',$data->article_keyword) as $key)
+                <diy class="ihover"># {{ $key }}</diy>
+                @endforeach
             </div>
             <div class="lookarticle">点击查看</div>
 
         </div>
         <div class='articlefooter'></div>
-        <!-- 一篇文章结束-->
-        <!-- 1篇文章 -->
-<!--        <div class='articleone'>-->
-<!--            <a href='' class="articletitle">让 Laravel、Symfony、 Zend 来一场公平的性能测试</a>-->
-<!--            <small class="articledate">作者:  <a class='auther' href="">何忠利</a> • 发表于 2017-04-12 </small>-->
-<!--                     <img class='articleimg' src="http://image.golaravel.com/b/60/0540baaed781628b02aac992d1c8f.png">-->
-<!--            <span class="articleprefix">-->
-<!--			网上充斥着各式各样的 PHP 框架性能对比的文章。然而，他们总是把“苹果”和“橘子”做对比（看上去有点儿像，都是圆的，但其实不是一码事）。这次，我将着重对 Laravel、Symfony 和 Zend 这三个框架做性能对比，并且还要说明为什么这三个框架总是被错误的进行比较...</span>-->
-<!--            <div class="articlekeyword">文章关键词：-->
-<!--                <diy class="ihover">#Laravel框架 </diy>-->
-<!--                <diy class="ihover">#Symfony </diy>-->
-<!--                <diy class="ihover">#PHP官方框架Zend</diy>-->
-<!--                <diy class="ihover">#Framework</diy>-->
-<!---->
-<!--            </div>-->
-<!--            <div class="lookarticle">点击查看</div>-->
-<!---->
-<!--        </div>-->
-<!--        <div class='articlefooter'></div>-->
-        <!-- 一篇文章结束-->
-        <!-- pack -->
+
         <div class='articlefooter'>
             <div class="packbtn">
                 <div class='packbtn leftpack'><</div>
