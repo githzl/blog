@@ -41,7 +41,8 @@ class ArticleController extends Controller
         $dataModel = new Article;
         $dataModel->article_title = $request->input('article_title','');
         $dataModel->article_type = $request->input('article_type','');
-        $dataModel->article_cover = $request->input('article_cover','');
+        $path = $this->uploadImg($request->file("article_cover"),'ueditor/upload/');
+        $dataModel->article_cover = $path;
         $dataModel->article_keyword = $request->input('article_keyword','');
         $dataModel->article_introduce = $request->input('article_introduce','');
         $dataModel->article_content = $request->input('article_content','');
@@ -93,5 +94,21 @@ class ArticleController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * upload img func.
+     *
+     * @param   $file
+     * @param   $remove
+     * @return  $path
+     */
+    public function uploadImg($file,$path)
+    {
+
+        $suffix = $file->getClientOriginalExtension();
+        $rename = date("YmdHis").rand(1000, 9999).".".$suffix;
+        $file->move($path, $rename);
+        return $path = '/'.$path.$rename;
     }
 }

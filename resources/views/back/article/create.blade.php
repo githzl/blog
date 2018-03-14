@@ -21,7 +21,7 @@
             <div class="panel-heading">Form Elements</div>
             <div class="panel-body">
                 <div class="col-md-10">
-                    <form role="form" action="/article" method="post">
+                    <form action="/article" method="post" enctype="multipart/form-data">
 
                         <div class="form-group">
                             <label>文章标题</label>
