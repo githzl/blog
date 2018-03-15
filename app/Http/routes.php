@@ -36,20 +36,21 @@ Route::group(['domain' => 'back.totmp.com','namespace' => 'back'],function(){
 
     Route::get('/login','AdminController@index');
     Route::post('/loginaction','AdminController@store');
+    Route::get('/logout','AdminController@logout');
     // 使用isAdmin中间件控制后台权限验证
     Route::group(['middleware' => 'isAdmin'],function(){
         Route::any('/','IndexController@index');
         Route::resource('article','ArticleController');
-
     });
 
 });
 
 // 本地测试环境路由，线上请注释。
-//Route::any('/','blog\IndexController@index');
+//Route::any('/','back\IndexController@index');
 //Route::any('/article/{id}','blog\IndexController@show');
 //Route::resource('/article','back\ArticleController');
 //Route::get('/login','back\AdminController@index');
+//Route::get('/logout','back\AdminController@logout');
 //Route::post('/loginaction','back\AdminController@store');
 
 
