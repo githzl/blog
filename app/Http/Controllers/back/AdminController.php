@@ -27,13 +27,15 @@ class AdminController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * this is logout function
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function logout(Request $request)
     {
-        //
+        if(Cookie::queue('is_admin','',-1)){
+            return redirect($request->getBaseUrl());
+        }
     }
 
     /**
