@@ -33,7 +33,7 @@ class AdminController extends Controller
      */
     public function logout(Request $request)
     {
-        if(Cookie::queue('is_admin','',-1)){
+        if(!Cookie::queue('is_admin','',-1)){
             return redirect($request->getBaseUrl());
         }
     }
