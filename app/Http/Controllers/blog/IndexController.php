@@ -17,7 +17,7 @@ class IndexController extends Controller
      */
     public function index(Request $request)
     {
-        $data = Article::where('article_isshow',1)->orderBy('created_at', 'desc')->paginate(3);
+        $data = Article::where('article_isshow',1)->orderBy('created_at', 'desc')->paginate(4);
         return view('blog.index',compact('data',$data));
     }
 
