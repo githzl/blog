@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Model\Article;
+use Illuminate\Support\Facades\Redis;
+
 
 class IndexController extends Controller
 {
