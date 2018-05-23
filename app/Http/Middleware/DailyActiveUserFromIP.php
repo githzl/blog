@@ -16,9 +16,7 @@ class DailyActiveUserFromIP
      */
     public function handle($request, Closure $next)
     {
-
         return $next($request);
-
     }
 
     public function terminate($request)
@@ -28,6 +26,6 @@ class DailyActiveUserFromIP
         $numberIP = sprintf('%u',ip2long($clientIP)); // 解决在32位操作系统下出现负数
         $day = date('Y-m-d');
         $key = "DailyActiveUserFromIP:$day";
-        Redis::setbit($key,$numberIP,1);
+        Redis::sadd($key,$numberIP);
     }
 }
