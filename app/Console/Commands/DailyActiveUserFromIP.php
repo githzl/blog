@@ -41,7 +41,7 @@ class DailyActiveUserFromIP extends Command
     {
         $day = date('Y-m-d');
         $key = "DailyActiveUserFromIP:$day"; // DailyActiveUserFromIP:2018-05-23
-        $number = Redis::bitcount($key);
+        $number = Redis::scard($key);
         $statisticModel = new Statistic;
         $statisticModel->day = $day;
         $statisticModel->number = $number;
