@@ -30,6 +30,7 @@ class Kernel extends HttpKernel
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'isAdmin' => \App\Http\Middleware\IsAdmin::class,
+        'IsAdmin' => \App\Http\Middleware\IsAdmin::class,
+        'DailyActiveUserFromIP' => \App\Http\Middleware\DailyActiveUserFromIP::class,
     ];
 }

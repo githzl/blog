@@ -24,7 +24,7 @@
 |
 */
 
-Route::group(['domain' => 'blog.totmp.com','namespace' => 'blog'],function(){
+Route::group(['domain' => 'blog.totmp.com','namespace' => 'blog','middleware' => 'DailyActiveUserFromIP'],function(){
 
     Route::any('/','IndexController@index');
 
@@ -38,7 +38,7 @@ Route::group(['domain' => 'back.totmp.com','namespace' => 'back'],function(){
     Route::post('/loginaction','AdminController@store');
     Route::get('/logout','AdminController@logout');
     // 使用isAdmin中间件控制后台权限验证
-    Route::group(['middleware' => 'isAdmin'],function(){
+    Route::group(['middleware' => 'IsAdmin'],function(){
         Route::any('/','IndexController@index');
         Route::resource('article','ArticleController');
     });
@@ -46,7 +46,9 @@ Route::group(['domain' => 'back.totmp.com','namespace' => 'back'],function(){
 });
 
 // 本地测试环境路由，线上请注释。
-//Route::any('/','back\IndexController@index');
+// Route::group(['middleware' => 'DailyActiveUserFromIP'],function(){
+//     Route::any('/','blog\IndexController@index');
+// });
 //Route::any('/article/{id}','blog\IndexController@show');
 //Route::resource('/article','back\ArticleController');
 //Route::get('/login','back\AdminController@index');
