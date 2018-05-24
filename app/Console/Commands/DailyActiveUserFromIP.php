@@ -39,7 +39,7 @@ class DailyActiveUserFromIP extends Command
      */
     public function handle()
     {
-        $day = date('Y-m-d',intval(time() - 1);
+        $day = date('Y-m-d',intval(time() - 1));
         $key = "DailyActiveUserFromIP:$day"; // DailyActiveUserFromIP:2018-05-23
         $number = Redis::scard($key);
         $statisticModel = new Statistic;
