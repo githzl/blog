@@ -86,9 +86,9 @@ body,h1,h2,h3,h4,h5,h6{
 }
 .footer{
     background: #505050;
-    height:40px;
+    height:80px;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 30px;
     color:#ccc;
     font-size: 13px;
     /*font-weight: 100;	*/

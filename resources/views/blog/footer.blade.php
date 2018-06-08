@@ -23,7 +23,15 @@
 
 </nav>
 <!-- 尾部 -->
-<div class="footer">Copyright © 2016 - 2018 All Rights Reserved  | 粤ICP备 16058872号
+<!--<div class="footer"><span>友情链接&nbsp;&nbsp;&nbsp;</span><a class="link">陈帅同学</a></div>-->
+<div class="footer">
+    <div style="padding-bottom: 8px;"><span>友情链接:</span>
+        @inject('friendlink','App\Model\Friendlink')
+        @foreach($friendlink->where('is_show',1)->get() as $item)
+        <abbr ><a style="color:#d5d5d5;margin-right:2px;" href="{{$item->website_link}}" target="_blank">{{$item->name}}</a></>
+        @endforeach
+    </div>
+    Copyright © 2016 - {{ date('Y')}} All Rights Reserved  | 粤ICP备 16058872号
 </div>
 
 </body>
