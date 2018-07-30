@@ -26,7 +26,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => yaconf::get('blog.DB_CONNECTION') ?? 'mysql',
 
     /*
     |--------------------------------------------------------------------------
@@ -54,13 +54,13 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('DB_DATABASE', 'forge'),
-            'username'  => env('DB_USERNAME', 'forge'),
-            'password'  => env('DB_PASSWORD', ''),
+            'host'      => yaconf::get('blog.DB_HOST') ?? 'localhost',
+            'database'  => yaconf::get('blog.DB_DATABASE') ?? 'forge',
+            'username'  => yaconf::get('blog.DB_USERNAME') ?? 'forge',
+            'password'  => yaconf::get('blog.DB_PASSWORD') ?? '',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
-            'prefix'    => env('DB_PREFIX', ''),
+            'prefix'    => yaconf::get('blog.DB_PREFIX') ?? '',
             'strict'    => false,
         ],
 
@@ -116,10 +116,10 @@ return [
         'cluster' => false,
 
         'default' => [
-            'host'     => env('REDIS_HOST', 'localhost'),
-            'password' => env('REDIS_PASSWORD', null),
-            'port'     => env('REDIS_PORT', 6379),
-            'database' => env('REDIS_DATABASE',0),
+            'host'     => yaconf::get('blog.REDIS_HOST') ?? 'localhost',
+            'password' => yaconf::get('blog.REDIS_PASSWORD') ?? null,
+            'port'     => yaconf::get('blog.REDIS_PORT') ?? 6379,
+            'database' => yaconf::get('blog.REDIS_DATABASE') ?? 0,
         ],
 
     ],

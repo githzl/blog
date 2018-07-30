@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'debug' => env('APP_DEBUG', false),
+    'debug' => yaconf::get('blog.APP_DEBUG') ?? false,
 
     /*
     |--------------------------------------------------------------------------
@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'SomeRandomString'),
+    'key' =>  yaconf::get('blog.APP_KEY') ?? 'SomeRandomString',
 
     'cipher' => 'AES-256-CBC',
 
@@ -95,7 +95,7 @@ return [
     |
     */
 
-    'log' => env('APP_LOG', 'single'),
+    'log' => yaconf::get('blog.APP_LOG') ?? 'single',
 
     /*
     |--------------------------------------------------------------------------
