@@ -19,8 +19,42 @@ class IndexController extends Controller
      */
     public function index(Request $request)
     {
-        $data = Article::where('article_isshow',1)->orderBy('created_at', 'desc')->paginate(4);
-        return view('blog.index',compact('data',$data));
+        // 多少条算一页
+        $count = config('selfdefine.index.showpage');
+
+        // 一共多少篇文章
+        $article_count = Article::where('article_isshow',1)->count();
+
+        // 总共能有多少页
+        $article_count = ceil($article_count / $count);
+
+        // 文章数据
+        $data = Article::where('article_isshow',1)->orderBy('created_at', 'desc')->paginate($count);
+
+        return view('blog.index',['data' => $data,'article_count' => $article_count]);
+    }
+
+    /**
+     * Show the esource is page.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function page($page)
+    {
+        // 多少条算一页
+        $count = config('selfdefine.index.showpage');
+
+        // 一共多少篇文章
+        $article_count = Article::where('article_isshow',1)->count();
+
+        // 总共能有多少页
+        $article_count = ceil($article_count / $count);
+
+        // 文章数据
+        $data = Article::where('article_isshow',1)->orderBy('created_at', 'desc')->skip(($page -1) * 5)->take(5)->get();
+
+        return view('blog.index',['data' => $data,'article_count' => $article_count,'page' =>$page]);
+
     }
 
     /**
@@ -53,7 +87,9 @@ class IndexController extends Controller
     public function show($id)
     {
         $data = Article::where('article_id',$id)->first();
-        return view('blog.article',compact('data',$data));
+        $prev = Article::where('article_id','>',$id)->where('article_isshow',1)->first();
+        $next = Article::where('article_id','<',$id)->where('article_isshow',1)->first();
+        return view('blog.article',['data' => $data,'prev' => $prev,'next' => $next]);
     }
 
     /**

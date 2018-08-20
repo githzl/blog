@@ -18,19 +18,34 @@
                 <diy class="ihover"># {{ $key }}</diy>
                 @endforeach
             </div>
-            <div class="lookarticle">点击查看</div>
+            <div class="articlekeyword">阅读量：
+
+                <diy class="ihover"> {{ 999 }}</diy>
+
+            </div>
+
+            <a href="http://blog.totmp.com" style="text-decoration: none;"><div class="lookarticle">返回主页</div></a>
 
         </div>
+
         <div class='articlefooter'></div>
 
         <div class='articlefooter'>
-            <div class="packbtn">
-                <div class='packbtn leftpack'><</div>
-                <div class='packbtn packcontent'>第 1 页／共 8 页</div>
-                <div class="packbtn rightpack">></div>
 
+<!--            <div class="packbtn">-->
+                @if(isset($prev))
 
-            </div>
+                <a href="/article/{{ $prev->article_id }}" style="text-decoration: none;">
+                    <div class='packbtn rightpack' >Prev：{{ $prev->article_title }}</div>
+                </a>
+                @endif
+                @if(isset($next))
+
+                <a href="/article/{{ $next->article_id }}" style="text-decoration: none;">
+                    <div class="packbtn leftpack">Next：{{ $next->article_title }}</div>
+                </a>
+                @endif
+
         </div>
     </div>
 

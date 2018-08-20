@@ -28,9 +28,30 @@
         <!-- pack -->
         <div class='articlefooter'>
             <div class="packbtn">
+            <!-- 上一页-->
+                @if(!isset($page))
+                    <div class='packbtn leftpack'><</div>
+                @elseif( isset($page) && $page > 1)
+                <a href="/all/{{ $page -1 }}"><div class='packbtn leftpack'><</div></a>
+                @else
                 <div class='packbtn leftpack'><</div>
-                <div class='packbtn packcontent'>第 1 页／共 8 页</div>
-                <div class="packbtn rightpack">></div>
+                @endif
+                <!-- 上一页-->
+
+                <div class='packbtn packcontent'>第 {{ $page or 1 }} 页／共 {{ $article_count }} 页</div>
+
+                @if(isset($page) && isset($article_count))
+
+                    @if($page == $article_count)
+                    <div class="packbtn rightpack">></div>
+                    @endif
+
+                    @if($page < $article_count)
+                    <a href="/all/{{ $page + 1}}"><div class="packbtn rightpack">></div></a>
+                    @endif
+                @else
+                    <a href="/all/2"><div class="packbtn rightpack">></div></a>
+                @endif
 
 
             </div>
