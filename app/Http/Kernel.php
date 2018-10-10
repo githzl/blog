@@ -32,5 +32,7 @@ class Kernel extends HttpKernel
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'IsAdmin' => \App\Http\Middleware\IsAdmin::class,
         'DailyActiveUserFromIP' => \App\Http\Middleware\DailyActiveUserFromIP::class,
+        'DailyActiveUserFromRequest' => \App\Http\Middleware\DailyActiveUserFromRequest::class,
+
     ];
 }

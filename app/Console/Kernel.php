@@ -15,6 +15,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         Commands\Inspire::class,
         Commands\DailyActiveUserFromIP::class,
+        Commands\DailyActiveUserFromRequest::class,
     ];
 
     /**
@@ -25,12 +26,12 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // 励志名言
-        $schedule->command('inspire')
-                 ->hourly();
-
-        // 每晚12点统计今日IP日活
+        // 每晚23:59分统计今日IP日活
         $schedule->command('DailyActiveUserFromIP')
-                 ->daily();
+                 ->cron('59 23 * * * *');
+
+        // 每晚23:59分统计今日请求数
+        $schedule->command('DailyActiveUserFromRequest')
+            ->cron('59 23 * * * *');
     }
 }

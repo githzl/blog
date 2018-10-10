@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Redis;
 
-class DailyActiveUserFromIP
+class DailyActiveUserFromRequest
 {
     /**
      * Handle an incoming request.
@@ -21,10 +21,8 @@ class DailyActiveUserFromIP
 
     public function terminate($request)
     {
-        // 统计每日多少个IP来访问
-        $clientIP = $request->ip();
-        $numberIP = sprintf('%u',ip2long($clientIP)); // 解决在32位操作系统下出现负数
-        $key = "DailyActiveUserFromIP";
-        Redis::sadd($key,$numberIP);
+        // 统计每日多少次的请求
+        $key = "DailyActiveUserFromRequest";
+        Redis::incr($key);
     }
 }
