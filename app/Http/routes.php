@@ -37,19 +37,19 @@ Route::group([
     Route::any('/all/{page}','IndexController@page');
 
 });
-//
-//Route::group(['domain' => 'back.totmp.com','namespace' => 'back'],function(){
-//
-//    Route::get('/login','AdminController@index');
-//    Route::post('/loginaction','AdminController@store');
-//    Route::get('/logout','AdminController@logout');
-//    // 使用isAdmin中间件控制后台权限验证
-//    Route::group(['middleware' => 'IsAdmin'],function(){
-//        Route::any('/','IndexController@index');
-//        Route::resource('article','ArticleController');
-//    });
-//
-//});
+
+Route::group(['domain' => 'back.totmp.com','namespace' => 'back'],function(){
+
+    Route::get('/login','AdminController@index');
+    Route::post('/loginaction','AdminController@store');
+    Route::get('/logout','AdminController@logout');
+    // 使用isAdmin中间件控制后台权限验证
+    Route::group(['middleware' => 'IsAdmin'],function(){
+        Route::any('/','IndexController@index');
+        Route::resource('article','ArticleController');
+    });
+
+});
 
 // 本地测试环境路由，线上请注释。
 // Route::group(['middleware' => ['DailyActiveUserFromIP','DailyActiveUserFromRequest']],function(){
