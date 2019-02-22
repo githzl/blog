@@ -1,9 +1,9 @@
 <?php
-echo 1;die;
+
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
-: * @package  Laravel
+ * @package  Laravel
  * @author   Taylor Otwell <taylorotwell@gmail.com>
  */
 
