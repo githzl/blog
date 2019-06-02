@@ -8,8 +8,7 @@
 
     <p style='font-size: 17px;'><b class="info">丨</b>最新文章</p>
 <!--    <div class='articletaglist'>MySQL搭建立高可用数据集群</div>-->
-    @inject('article','App\Model\Article')
-    @foreach($article->getNewArticle() as $item)
+    @foreach($articles as $item)
     <a href="/article/{{ $item->article_id }}"><div class='articletaglist'>{{ $item->article_title }}</div></a>
 
     @endforeach
@@ -26,8 +25,8 @@
 <!--<div class="footer"><span>友情链接&nbsp;&nbsp;&nbsp;</span><a class="link">陈帅同学</a></div>-->
 <div class="footer">
     <div style="padding-bottom: 8px;"><span>友情链接:</span>
-        @inject('friendlink','App\Model\Friendlink')
-        @foreach($friendlink->where('is_show',1)->get() as $item)
+<!--         @inject('friendlink','App\Model\Friendlink') -->
+        @foreach($friendlinks as $item)
         <abbr ><a style="color:#d5d5d5;margin-right:2px;" href="{{$item->website_link}}" target="_blank">{{$item->name}}</a></>
         @endforeach
     </div>
