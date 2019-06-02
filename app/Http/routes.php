@@ -50,17 +50,3 @@ Route::group(['domain' => 'back.totmp.com','namespace' => 'back'],function(){
     });
 
 });
-
-// 本地测试环境路由，线上请注释。
-// Route::group(['middleware' => ['DailyActiveUserFromIP','DailyActiveUserFromRequest']],function(){
-//     Route::any('/','blog\IndexController@index');
-//    Route::any('/all/{page}','blog\IndexController@page');
-
-// });
-//Route::any('/article/{id}','blog\IndexController@show');
-//Route::resource('/article','back\ArticleController');
-//Route::get('/login','back\AdminController@index');
-//Route::get('/logout','back\AdminController@logout');
-//Route::post('/loginaction','back\AdminController@store');
-
-
