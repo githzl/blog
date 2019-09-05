@@ -26,9 +26,9 @@
 
     </div>
     <div>
-        <a class='alimamaicon' href="http://www.totmp.com"><i class="iconfont icon-diqiu"></i></a>
-        <a class='alimamaicon' href="http://www.github.com/githzl"><i class="iconfont icon-github"></i></a>
-        <a class='alimamaicon' href="mailto:newhzl@163.com"><i class="iconfont icon-mail"></i></a>
+        <a class='alimamaicon' target='_blank' href="http://www.totmp.com"><i class="iconfont icon-diqiu"></i></a>
+        <a class='alimamaicon' target='_blank' href="http://www.github.com/githzl"><i class="iconfont icon-github"></i></a>
+        <a class='alimamaicon' target='_blank' href="mailto:newhzl@163.com"><i class="iconfont icon-mail"></i></a>
     </div>
 </div>
 <!--  头部分结束-->
