@@ -18,7 +18,7 @@
         <a class='tagbtn' href="">PHP</a>
         <a class='tagbtn' href="">MySQL</a>
         <a class='tagbtn' href="">Linux</a>
-        <a class='tagbtn' href="">Node.js</a>
+        <a class='tagbtn' href="">PgSQL</a>
         <a class='tagbtn' href="">Nginx</a>
         <a class='tagbtn' href="">Swoole</a>
         <a class='tagbtn' href="">Golang</a>
